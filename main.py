@@ -1,16 +1,24 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from Class_YA import YA
+from getVKid import VK
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    # запрашиваем у пользователя необходимые параметры:
+    token = input("Введите Yandex token: ")
+    name_file = input("Введите имя папки на YandexDisk: ")
+    access_token = input("Введите токен ВК: ")
+    owner_id = input("Введите id пользователя ВК: ")
+
+    # создаём экземпляр класса VK:
+    vk_user = VK(access_token)
+    # получаем словарик по выгруженным фоткам из вк + json файл с информацией о фото
+    vk_user.profile_photos(owner_id)
+    # создаём экземпляр класса Yandex:
+    ya_user = YA(token, name_file)
+    # создаём папку на YandexDisk
+    ya_user.create_file()
+    # отправляем полученные фото в папку на YandexDisk
+    ya_user.files_upload(vk_user.profile_photos(owner_id))
+
+

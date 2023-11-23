@@ -1,2 +1,1 @@
-access_token = "vk1.a.dDShW-EN9G_NNxWvX7HIv6REL11azvotkUIA8HJjQkTpHB89UHjzkB_dXv9NYeR_WpnuuRnDRciNusVwHzUj4LJrPB8WNz692t-NYk_6QBNFw4-wGGdoPNJ4jX8SP7voUhP9LNnV5Nr0-TrQirYzu3qTR8LrhaRHEHnsDRz51w-MmE-r--_VLs_22lvX9ikB11fszYdt8u-ckV5S46S-6g"
-user_id = 147557206
+
