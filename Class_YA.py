@@ -22,6 +22,7 @@ class YA:
         }
         headers = self.get_headers()
         response = requests.put(url, headers=headers, params=params)
+        print(f"Статус добавления папки на яндекс диск: {response.status_code}")
         return response
 
     # загрузим в папку фотографии по полученному url
@@ -34,6 +35,7 @@ class YA:
             for i in tqdm(str(file)):
                 params = {"path": f"{self.name_file}/{file}.jpg", "url": photo_info[file]["url"]}
                 response = requests.post(url_load, headers=headers, params=params)
+                print(f"Статус загрузки фотографий в указанную папку: {response.status_code}")
                 print("Файлы успешно загружены на диск")
 
 
